@@ -1,0 +1,35 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/responsive";
+@use "../../styles/partials/sizing";
+
+.comments-container {
+    display: flex;
+    &__avatar {
+        background-color: grey;
+        border-radius: 50%;
+        height: 36px;
+        width: 36px;
+        margin-right: 1rem;
+    }
+    &__content {
+        width: 84%;
+    }
+    &__name-date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__name {
+        @include sizing.subheader;
+        margin: 0 0 0.5rem 0;
+    }
+    &__date {
+        @include sizing.subheader;
+        margin: 0 0 0.5rem 0;
+    }
+    &__paragraph {
+        @include sizing.body-copy;
+        margin: 0;
+    }
+}
