@@ -4,7 +4,7 @@ import TestImage from "../../assets/images/Images/Mohan-muruge.jpg";
 
 function NextVideos(props) {
     const { title, channel, image } = props;
-    console.log(title);
+    // console.log(title);
     return (
         <div className="Next-Videos__video-container">
             <img className="Next-Videos__image" src={image}></img>

@@ -3,11 +3,10 @@ import { useState } from "react";
 import activeVideoInfo from "../../data/video-details.json";
 import videoInfo from "../../data/videos.json";
 import "./Video-Section.scss";
-import likes from "../../assets/images/Icons/likes.svg";
-import views from "../../assets/images/Icons/views.svg";
 import Form from "../Form/Form";
 import Comments from "../Comments/comments";
 import NextVideos from "../Next-Videos/NextVideos";
+import Video from "../Video/Video";
 
 console.log(activeVideoInfo);
 // console.log(videoInfo);
@@ -15,13 +14,14 @@ console.log(activeVideoInfo);
 // console.log(activeVideoInfo.comments);
 function VideoSection(props) {
     const videoComments = activeVideoInfo[0].comments;
-    console.log(videoInfo);
-    const [comments, setComments] = useState(videoComments);
-    console.log(videoComments);
-    console.log(videoInfo);
+    // console.log(videoInfo);
+    const [comments, setComments] = useState(activeVideoInfo[0]);
+    // console.log(videoComments);
+    // console.log(videoInfo);
+    // console.log(comments);
     return (
         <section>
-            <div className="videos">
+            {/* <div className="videos">
                 <video
                     className="videos__video"
                     controls
@@ -72,7 +72,8 @@ function VideoSection(props) {
                         {activeVideoInfo[0].comments.length} Comments
                     </p>
                 </div>
-            </div>
+            </div> */}
+            <Video comments={comments} />
             <Form />
             {videoComments.map((comment) => (
                 <Comments
