@@ -15,7 +15,8 @@ function Video(props) {
         description,
         comments,
     } = props.comments;
-    console.log(title);
+    // console.log(title);
+    const date = new Date(timestamp).toLocaleDateString();
     return (
         <>
             <div className="videos">
@@ -33,7 +34,7 @@ function Video(props) {
                             By {channel}
                         </h4>
                         <h4 className="videos-information__release-date">
-                            {timestamp}
+                            {date}
                         </h4>
                     </div>
                     <div className="videos-information__bio-container">

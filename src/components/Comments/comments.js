@@ -4,23 +4,21 @@ import "./Comments.scss";
 // import videoInfo from "./data/videos.json";
 
 function Comments(props) {
+    // console.log(props);
+    const { name, timestamp, comment } = props;
+    const date = new Date(timestamp).toLocaleDateString();
+    console.log(date);
+    // console.log(name);
     return (
         <section className="comments">
             <div className="comments-container">
                 <div className="comments-container__avatar"></div>
                 <div className="comments-container__content">
                     <div className="comments-container__name-date">
-                        <h3 className="comments-container__name">
-                            Micheal Lyons
-                        </h3>
-                        <p className="comments-container__date">08/09/2021</p>
+                        <h3 className="comments-container__name">{name}</h3>
+                        <p className="comments-container__date">{date}</p>
                     </div>
-                    <p className="comments-container__paragraph">
-                        They BLEW the ROOF off at their last event, once
-                        everyone started figuring out they were going.THis is
-                        still simply the greatest opening of an event I have
-                        EVER witnessed
-                    </p>
+                    <p className="comments-container__paragraph">{comment}</p>
                 </div>
             </div>
         </section>
