@@ -7,6 +7,7 @@ import likes from "../../assets/images/Icons/likes.svg";
 import views from "../../assets/images/Icons/views.svg";
 import Form from "../Form/Form";
 import Comments from "../Comments/comments";
+import NextVideos from "../Next-Videos/NextVideos";
 
 console.log(activeVideoInfo);
 // console.log(videoInfo);
@@ -14,6 +15,7 @@ console.log(activeVideoInfo);
 // console.log(activeVideoInfo.comments);
 function VideoSection(props) {
     const videoComments = activeVideoInfo[0].comments;
+    console.log(videoInfo);
     const [comments, setComments] = useState(videoComments);
     console.log(videoComments);
     console.log(videoInfo);
@@ -80,6 +82,17 @@ function VideoSection(props) {
                     timestamp={comment.timestamp}
                 />
             ))}
+            <h3>Next Videos</h3>
+            <section className="Videos-Section">
+                {videoInfo.map((video) => (
+                    <NextVideos
+                        key={video.id}
+                        title={video.title}
+                        channel={video.channel}
+                        image={video.image}
+                    />
+                ))}
+            </section>
         </section>
     );
 }

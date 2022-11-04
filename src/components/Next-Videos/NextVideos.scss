@@ -1,0 +1,28 @@
+@use "../../styles/partials/colors";
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/responsive";
+@use "../../styles/partials/sizing";
+
+.Next-Videos {
+    &__video-container {
+        display: flex;
+        gap: 1rem;
+    }
+    &__image {
+        border-radius: 4px;
+        width: 100px;
+        height: 80px;
+        display: inline-block;
+    }
+
+    &__title {
+        margin-top: 0;
+        @include sizing.section-header;
+        color: colors.$BrainFlix-Black;
+    }
+    &__channel {
+        margin-top: 0;
+        margin-bottom: 0;
+        @include sizing.section-header;
+    }
+}
