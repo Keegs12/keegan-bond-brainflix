@@ -2,3 +2,10 @@
 @use "../../styles/partials/fonts";
 @use "../../styles/partials/responsive";
 @use "../../styles/partials/sizing";
+
+.Video-content {
+    @include responsive.desktop {
+        display: flex;
+        margin-left: 7.5%;
+    }
+}

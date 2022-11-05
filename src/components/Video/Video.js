@@ -19,13 +19,7 @@ function Video(props) {
     const date = new Date(timestamp).toLocaleDateString();
     return (
         <>
-            <div className="videos">
-                <video
-                    className="videos__video"
-                    controls
-                    poster={image}
-                ></video>
-            </div>
+            <div className="videos"></div>
             <div className="videos-information">
                 <h2 className="videos-information__title">{title}</h2>
                 <div className="videos-information__bio">

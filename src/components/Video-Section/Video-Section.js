@@ -27,29 +27,40 @@ function VideoSection(props) {
 
     return (
         <section>
-            <Video comments={video} />
-            <Form />
-            {videoComments.map((comment) => (
-                <Comments
-                    key={comment.id}
-                    name={comment.name}
-                    comment={comment.comment}
-                    timestamp={comment.timestamp}
-                />
-            ))}
-            <h3>Next Videos</h3>
-            <section className="Videos-Section">
-                {filteredVideo.map((video) => (
-                    <NextVideos
-                        key={video.id}
-                        id={video.id}
-                        title={video.title}
-                        channel={video.channel}
-                        image={video.image}
-                        selectedVideo={clickHandler}
-                    />
-                ))}
-            </section>
+            <video
+                className="videos__video"
+                controls
+                poster={video.image}
+            ></video>
+            <div className="Video-content">
+                <section>
+                    <Video comments={video} />
+                    <Form />
+                    {videoComments.map((comment) => (
+                        <Comments
+                            key={comment.id}
+                            name={comment.name}
+                            comment={comment.comment}
+                            timestamp={comment.timestamp}
+                        />
+                    ))}
+                </section>
+
+                {/* <section className="Videos-Section"> */}
+                <section>
+                    <h3>Next Videos</h3>
+                    {filteredVideo.map((video) => (
+                        <NextVideos
+                            key={video.id}
+                            id={video.id}
+                            title={video.title}
+                            channel={video.channel}
+                            image={video.image}
+                            selectedVideo={clickHandler}
+                        />
+                    ))}
+                </section>
+            </div>
         </section>
     );
 }

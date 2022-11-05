@@ -10,13 +10,20 @@
     gap: 1rem;
 }
 .videos {
+    background-color: colors.$BrainFlix-DarkBlack;
+
     &__video {
-        width: 100%;
+        display: block;
+        height: 40vw;
+        margin: auto;
     }
 }
 
 .videos-information {
     padding: 0 16px;
+    @include responsive.tablet {
+        padding: 0 24px;
+    }
     &__title {
         color: colors.$BrainFlix-Black;
 
@@ -31,11 +38,13 @@
         border-bottom: 1px solid colors.$Mercury;
         border-top: 1px solid colors.$Mercury;
         padding: 1rem 0;
+        gap: 2rem;
 
         @include responsive.tablet {
             justify-content: space-between;
             border-top: transparent;
             padding-top: 0;
+            padding-bottom: 0.5rem;
         }
     }
     &__bio-container {
@@ -56,6 +65,10 @@
     }
     &__container {
         height: 100%;
+
+        @include responsive.tablet {
+            margin-top: 1rem;
+        }
     }
     &__views-container {
         display: flex;
@@ -73,7 +86,7 @@
     &__likes-img {
         @include responsive.tablet {
             margin-top: 0.3rem;
-            margin-left: 1rem;
+            margin-left: 2rem;
         }
     }
     &__views-title {
@@ -94,5 +107,9 @@
         color: colors.$BrainFlix-Black;
         @include sizing.body-copy;
         font-weight: 700;
+
+        @include responsive.tablet {
+            margin-top: 2rem;
+        }
     }
 }
