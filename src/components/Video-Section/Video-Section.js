@@ -33,7 +33,7 @@ function VideoSection(props) {
                 poster={video.image}
             ></video>
             <div className="Video-content">
-                <section>
+                <section className="Video-Form-Comment">
                     <Video comments={video} />
                     <Form />
                     {videoComments.map((comment) => (
@@ -47,18 +47,20 @@ function VideoSection(props) {
                 </section>
 
                 {/* <section className="Videos-Section"> */}
-                <section>
+                <section className="Next-Videos__section">
                     <h3>Next Videos</h3>
-                    {filteredVideo.map((video) => (
-                        <NextVideos
-                            key={video.id}
-                            id={video.id}
-                            title={video.title}
-                            channel={video.channel}
-                            image={video.image}
-                            selectedVideo={clickHandler}
-                        />
-                    ))}
+                    <div className="Next-Videos__container">
+                        {filteredVideo.map((video) => (
+                            <NextVideos
+                                key={video.id}
+                                id={video.id}
+                                title={video.title}
+                                channel={video.channel}
+                                image={video.image}
+                                selectedVideo={clickHandler}
+                            />
+                        ))}
+                    </div>
                 </section>
             </div>
         </section>

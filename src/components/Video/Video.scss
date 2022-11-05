@@ -24,6 +24,9 @@
     @include responsive.tablet {
         padding: 0 24px;
     }
+    @include responsive.desktop {
+        padding-right: 0;
+    }
     &__title {
         color: colors.$BrainFlix-Black;
 

@@ -8,15 +8,21 @@
         display: flex;
         gap: 1rem;
     }
+    &__sub-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     &__image {
         border-radius: 4px;
-        width: 100px;
-        height: 80px;
-        display: inline-block;
+        width: 7rem;
+        height: 4.5rem;
+        object-fit: cover;
+        display: block;
     }
 
     &__title {
-        margin-top: 0;
+        margin: 0;
         @include sizing.section-header;
         color: colors.$BrainFlix-Black;
     }
