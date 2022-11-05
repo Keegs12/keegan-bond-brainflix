@@ -9,18 +9,15 @@
     position: relative;
 
     @include responsive.tablet {
-        padding: 24px;
+        padding: 16px 24px 16px 24px;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-
-    // &__container {
-    //     @include responsive.tablet {
-    //         display: flex;
-    //         align-items: center;
-    //     }
-    // }
+    @include responsive.desktop {
+        justify-content: end;
+        gap: 2rem;
+    }
 
     &__logo {
         width: 120px;
@@ -30,6 +27,16 @@
 
         @include responsive.tablet {
             margin: 0;
+        }
+        @include responsive.desktop {
+            margin-right: 25%;
+        }
+    }
+    &__container {
+        display: flex;
+
+        @include responsive.tablet {
+            display: flex;
         }
     }
     &__search-bar {
@@ -41,14 +48,56 @@
         border-radius: 4px;
         margin-bottom: 16px;
         padding: 12px;
-        height: 32px;
+        height: 34px;
         width: 80%;
+        border: 1px solid colors.$Mercury;
+
+        &::placeholder {
+            padding-left: 15px;
+        }
+        &:focus {
+            outline: none;
+            border: 1px solid colors.$BrainFlix-Blue;
+            background-image: none;
+            &::placeholder {
+                padding: 0;
+            }
+        }
+        &::before {
+        }
         @include responsive.tablet {
             width: 35%;
             margin: 0;
             height: 40px;
         }
+        @include responsive.desktop {
+            width: 20%;
+        }
     }
+
+    &__avatar {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        margin-left: 1.2rem;
+        position: relative;
+        top: 14px;
+        // position: absolute;
+        // top: 40px;
+        // right: 20px;
+
+        @include responsive.tablet {
+            position: static;
+            width: 40px;
+            height: 40px;
+            order: 4;
+            margin-left: 0;
+        }
+        @include responsive.desktop {
+            margin-right: 10%;
+        }
+    }
+
     &__button {
         @include sizing.labels-buttons;
         background-image: url("../../assets/images/Icons/upload.svg");
@@ -66,23 +115,8 @@
             padding: 0 32px;
             margin: 0;
         }
-    }
-    &__avatar {
-        border-radius: 50%;
-        width: 36px;
-        height: 36px;
-        position: absolute;
-        top: 40px;
-        right: 20px;
-
-        @include responsive.tablet {
-            position: static;
-            width: 40px;
-            height: 40px;
+        @include responsive.desktop {
+            width: 150px;
         }
     }
-}
-
-::placeholder {
-    padding-left: 20px;
 }

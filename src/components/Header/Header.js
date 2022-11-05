@@ -12,6 +12,7 @@ function Header(props) {
                 src={BrainFlixLogo}
                 alt="BrainFlixLogo, Blue Youtube"
             ></img>
+
             <label
                 className="Header__search-bar-input"
                 htmlFor="search"
@@ -23,12 +24,13 @@ function Header(props) {
                 id="search"
                 placeholder="Search"
             ></input>
-            <button className="Header__button">UPLOAD</button>
             <img
                 className="Header__avatar"
                 src={Avatar}
                 alt="BrainFlix Avatar Icon"
             ></img>
+
+            <button className="Header__button">UPLOAD</button>
             {/* </div> */}
         </header>
     );
