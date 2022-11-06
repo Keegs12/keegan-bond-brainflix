@@ -10,18 +10,16 @@ function Comments(props) {
     console.log(date);
     // console.log(name);
     return (
-        <section className="comments">
-            <div className="comments-container">
-                <div className="comments-container__avatar"></div>
-                <div className="comments-container__content">
-                    <div className="comments-container__name-date">
-                        <h3 className="comments-container__name">{name}</h3>
-                        <p className="comments-container__date">{date}</p>
-                    </div>
-                    <p className="comments-container__paragraph">{comment}</p>
+        <div className="comments-container">
+            <div className="comments-container__avatar"></div>
+            <div className="comments-container__content">
+                <div className="comments-container__name-date">
+                    <h3 className="comments-container__name">{name}</h3>
+                    <p className="comments-container__date">{date}</p>
                 </div>
+                <p className="comments-container__paragraph">{comment}</p>
             </div>
-        </section>
+        </div>
     );
 }
 

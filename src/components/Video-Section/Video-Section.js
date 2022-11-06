@@ -27,15 +27,18 @@ function VideoSection(props) {
 
     return (
         <section>
-            <video
-                className="videos__video"
-                controls
-                poster={video.image}
-            ></video>
+            <div className="Videos-container">
+                <video
+                    className="Videos-container__video"
+                    controls
+                    poster={video.image}
+                ></video>
+            </div>
             <div className="Video-content">
                 <section className="Video-Form-Comment">
                     <Video comments={video} />
                     <Form />
+
                     {videoComments.map((comment) => (
                         <Comments
                             key={comment.id}
@@ -48,7 +51,7 @@ function VideoSection(props) {
 
                 {/* <section className="Videos-Section"> */}
                 <section className="Next-Videos__section">
-                    <h3>Next Videos</h3>
+                    <h3 className="Next-Videos__heading">Next Videos</h3>
                     <div className="Next-Videos__container">
                         {filteredVideo.map((video) => (
                             <NextVideos
