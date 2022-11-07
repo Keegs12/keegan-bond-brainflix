@@ -4,16 +4,16 @@
 @use "../../styles/partials/sizing";
 
 .Videos-Section {
-    padding: 0 16px;
+    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
 .videos-information {
-    padding: 0 16px;
+    padding: 0 1rem;
     @include responsive.tablet {
-        padding: 0 24px;
+        padding: 0 1.5rem;
     }
     @include responsive.desktop {
         padding-right: 0;
@@ -29,8 +29,8 @@
     &__bio {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid colors.$Mercury;
-        border-top: 1px solid colors.$Mercury;
+        border-bottom: 0.0625rem solid colors.$Mercury;
+        border-top: 0.0625rem solid colors.$Mercury;
         padding: 1rem 0;
         gap: 2rem;
 
@@ -43,6 +43,7 @@
     }
     &__bio-container {
         @include responsive.tablet {
+            @include sizing.labels-buttons;
             display: flex;
             align-items: center;
         }
@@ -50,12 +51,20 @@
     &__channel {
         margin: 0.5rem 2rem 0 0;
         color: colors.$BrainFlix-Black;
-        font-weight: 400;
+        font-weight: 600;
+        @include responsive.tablet {
+            @include sizing.labels-buttons-td;
+        }
     }
     &__release-date {
         margin: 0.5rem 2rem 0 0;
         color: colors.$Silver;
         font-weight: 400;
+
+        @include responsive.tablet {
+            @include sizing.labels-buttons-td;
+            font-weight: 400;
+        }
     }
     &__container {
         height: 100%;
@@ -67,6 +76,9 @@
     &__views-container {
         display: flex;
         align-items: center;
+        @include responsive.tablet {
+            @include sizing.labels-buttons;
+        }
     }
     &__views-img {
         @include responsive.tablet {
@@ -76,6 +88,13 @@
     }
     &__likes-container {
         display: flex;
+
+        @include responsive.tablet {
+            @include sizing.labels-buttons;
+        }
+        @include responsive.desktop {
+            margin-right: 1rem;
+        }
     }
     &__likes-img {
         @include responsive.tablet {
@@ -92,10 +111,22 @@
         margin: 0.5rem 0 0 0.5rem;
         color: colors.$Silver;
         font-weight: 400;
+
+        @include responsive.tablet {
+            @include sizing.labels-buttons-td;
+            font-weight: 400;
+        }
     }
     &__comment {
         color: colors.$BrainFlix-Black;
         @include sizing.body-copy;
+
+        @include responsive.tablet {
+            @include sizing.body-copy-td;
+        }
+        @include responsive.tablet {
+            padding-right: 1rem;
+        }
     }
     &__number-of-comments {
         color: colors.$BrainFlix-Black;

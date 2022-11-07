@@ -5,9 +5,9 @@
 
 .comments-container {
     display: flex;
-    padding-bottom: 16px;
-    margin: 16px;
-    border-bottom: 1px solid colors.$Mercury;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    border-bottom: 0.0625rem solid colors.$Mercury;
 
     @include responsive.desktop {
         &:last-of-type {
@@ -16,7 +16,7 @@
     }
 
     @include responsive.tablet {
-        margin: 24px;
+        margin: 1.5rem;
     }
     @include responsive.desktop {
         margin-right: 0;
@@ -24,9 +24,9 @@
     &__avatar {
         background-color: colors.$Mercury;
         border-radius: 50%;
-        height: 36px;
-        width: 36px;
-        margin-right: 1rem;
+        height: 2.25rem;
+        width: 2.25rem;
+        margin-right: 16px;
     }
     &__content {
         width: 84%;
@@ -49,12 +49,21 @@
         margin: 0 0 0.5rem 0;
         color: colors.$BrainFlix-Black;
         font-weight: 600;
+
+        @include responsive.tablet {
+            @include sizing.subheader-td;
+        }
     }
     &__date {
         @include sizing.subheader;
         margin: 0 0 0.5rem 0;
         color: colors.$Mercury;
         font-weight: 400;
+
+        @include responsive.tablet {
+            @include sizing.subheader-td;
+            font-weight: 400;
+        }
         @include responsive.desktop {
             margin-right: 1.5rem;
         }
@@ -63,6 +72,10 @@
         @include sizing.body-copy;
         margin: 0;
         color: colors.$BrainFlix-Black;
+
+        @include responsive.tablet {
+            @include sizing.body-copy-td;
+        }
 
         @include responsive.desktop {
             margin-right: 0;

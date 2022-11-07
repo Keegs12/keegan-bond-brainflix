@@ -11,7 +11,7 @@ function Form(props) {
                 <div className="comments__form-container">
                     <img className="comments__avatar" src={Avatar} alt=""></img>
                     <div className="comments__input-container">
-                        <div className="comments__test2">
+                        <div className="comments__input-title">
                             <label
                                 className="comments__text-area-title"
                                 htmlFor="comments"

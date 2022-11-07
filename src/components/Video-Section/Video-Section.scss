@@ -16,8 +16,15 @@
 
         @include responsive.tablet {
             display: block;
+            height: 50vw;
+            width: 90vw;
+            margin: auto;
+            object-fit: cover;
+        }
+        @include responsive.desktop {
+            display: block;
             height: 40vw;
-            width: 200vh;
+            width: 70vw;
             margin: auto;
             object-fit: cover;
         }
@@ -33,25 +40,26 @@
     }
 }
 .Next-Videos__section {
-    padding: 0 16px;
+    padding: 0 1rem;
 
     @include responsive.tablet {
         width: 40%;
     }
     @include responsive.desktop {
-        width: 35%;
+        width: 30%;
         padding-left: 1.5rem;
-        padding-right: 24px;
+        padding-right: 1.5rem;
         margin-right: 9rem;
-        border-left: 1px solid colors.$Mercury;
+        border-left: 0.0625rem solid colors.$Mercury;
+        padding-bottom: 2rem;
     }
 }
 .Next-Videos__heading {
     @include responsive.desktop {
-        margin-top: 32px;
+        margin-top: 2rem;
         color: colors.$Silver;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 }
 .Video-Form-Comment {
