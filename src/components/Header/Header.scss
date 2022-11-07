@@ -63,8 +63,7 @@
                 padding: 0;
             }
         }
-        &::before {
-        }
+
         @include responsive.tablet {
             width: 35%;
             margin: 0;
