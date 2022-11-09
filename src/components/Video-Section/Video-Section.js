@@ -9,6 +9,7 @@ import NextVideos from "../Next-Videos/NextVideos";
 import Video from "../Video/Video";
 
 function VideoSection(props) {
+    console.log(props);
     const [video, setVideo] = useState(activeVideoInfo[0]);
     const videoComments = video.comments;
 

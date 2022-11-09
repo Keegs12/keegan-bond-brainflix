@@ -2,8 +2,12 @@ import React from "react";
 import BrainFlixLogo from "../../assets/images/Logo/BrainFlix-logo.svg";
 import Avatar from "../../assets/images/Images/Mohan-muruge.jpg";
 import "./Header.scss";
-
+import { useNavigate } from "react-router-dom";
 function Header(props) {
+    let navigate = useNavigate();
+    const upload = () => {
+        navigate("/upload");
+    };
     return (
         <header className="Header">
             {/* <div className="Header__container"> */}
@@ -30,7 +34,9 @@ function Header(props) {
                 alt="BrainFlix Avatar Icon"
             ></img>
 
-            <button className="Header__button">UPLOAD</button>
+            <button className="Header__button" onClick={() => upload()}>
+                UPLOAD
+            </button>
             {/* </div> */}
         </header>
     );
