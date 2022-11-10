@@ -3,10 +3,13 @@ import BrainFlixLogo from "../../assets/images/Logo/BrainFlix-logo.svg";
 import Avatar from "../../assets/images/Images/Mohan-muruge.jpg";
 import "./Header.scss";
 import { useNavigate } from "react-router-dom";
-function Header(props) {
+function Header() {
     let navigate = useNavigate();
     const upload = () => {
         navigate("/upload");
+    };
+    const home = () => {
+        navigate("/");
     };
     return (
         <header className="Header">
@@ -15,6 +18,7 @@ function Header(props) {
                 className="Header__logo"
                 src={BrainFlixLogo}
                 alt="BrainFlixLogo, Blue Youtube"
+                onClick={() => home()}
             ></img>
 
             <label

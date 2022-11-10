@@ -4,6 +4,9 @@
 @use "../../styles/partials/sizing";
 
 .Next-Videos {
+    &__links {
+        text-decoration: none;
+    }
     &__video-container {
         display: flex;
         gap: 1rem;

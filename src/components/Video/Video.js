@@ -3,19 +3,9 @@ import "./Video.scss";
 import likesImage from "../../assets/images/Icons/likes.svg";
 import viewsImage from "../../assets/images/Icons/views.svg";
 function Video(props) {
-    console.log(props.comments.title);
-    console.log();
-    const {
-        title,
-        image,
-        channel,
-        timestamp,
-        views,
-        likes,
-        description,
-        comments,
-    } = props.comments;
-    // console.log(title);
+    const { title, channel, timestamp, views, likes, description, comments } =
+        props.comments;
+
     const date = new Date(timestamp).toLocaleDateString();
     return (
         <>
