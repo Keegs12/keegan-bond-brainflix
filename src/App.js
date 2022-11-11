@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import VideoSection from "./components/Video-Section/Video-Section";
+
 import Home from "./pages/HomePage/Home";
 import Upload from "./pages/UploadPage/Upload";
 

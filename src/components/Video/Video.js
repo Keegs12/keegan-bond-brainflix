@@ -2,23 +2,19 @@ import React from "react";
 import "./Video.scss";
 import likesImage from "../../assets/images/Icons/likes.svg";
 import viewsImage from "../../assets/images/Icons/views.svg";
-function Video(props) {
-    const { title, channel, timestamp, views, likes, description, comments } =
-        props.comments;
-
-    const date = new Date(timestamp).toLocaleDateString();
+function Video({ video }) {
     return (
         <>
             <div className="videos"></div>
             <div className="videos-information">
-                <h2 className="videos-information__title">{title}</h2>
+                <h2 className="videos-information__title">{video.title}</h2>
                 <div className="videos-information__bio">
                     <div className="videos-information__bio-container">
                         <h4 className="videos-information__channel">
-                            By {channel}
+                            By {video.channel}
                         </h4>
                         <h4 className="videos-information__release-date">
-                            {date}
+                            {new Date(video.timestamp).toLocaleDateString()}
                         </h4>
                     </div>
                     <div className="videos-information__bio-container">
@@ -29,7 +25,7 @@ function Video(props) {
                                 alt="eye icon for a view"
                             ></img>
                             <h4 className="videos-information__views-title">
-                                {views}
+                                {video.views}
                             </h4>
                         </div>
                         <div className="videos-information__likes-container">
@@ -39,15 +35,17 @@ function Video(props) {
                                 alt="heart icon for a like"
                             ></img>
                             <h4 className="videos-information__likes-title">
-                                {likes}
+                                {video.likes}
                             </h4>
                         </div>
                     </div>
                 </div>
                 <div className="videos-information__container">
-                    <p className="videos-information__comment">{description}</p>
+                    <p className="videos-information__comment">
+                        {video.description}
+                    </p>
                     <p className="videos-information__number-of-comments">
-                        {comments.length} Comments
+                        {video.comments.length} Comments
                     </p>
                 </div>
             </div>
