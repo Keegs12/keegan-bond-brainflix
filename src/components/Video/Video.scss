@@ -53,7 +53,8 @@
         color: colors.$BrainFlix-Black;
         font-weight: 600;
         @include responsive.tablet {
-            @include sizing.labels-buttons-td;
+            @include sizing.body-copy-td;
+            font-weight: 600;
         }
     }
     &__release-date {

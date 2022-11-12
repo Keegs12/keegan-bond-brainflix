@@ -39,6 +39,9 @@
             position: static;
             margin-top: 1.3rem;
         }
+        @include responsive.desktop {
+            margin-right: 2rem;
+        }
     }
     &__input-title {
         display: flex;
@@ -50,11 +53,12 @@
         @include responsive.tablet {
             align-items: center;
             display: flex;
+
             gap: 2rem;
         }
 
         @include responsive.desktop {
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
     }
     &__text-area-title {
@@ -72,6 +76,11 @@
         &::placeholder {
             padding: 0.5rem 0 0 0.5rem;
             color: colors.$BrainFlix-Black;
+            font-family: "AvenirNextTLPro";
+        }
+        &:focus {
+            outline: none;
+            border: 0.0625rem solid colors.$BrainFlix-Blue;
         }
 
         @include responsive.tablet {

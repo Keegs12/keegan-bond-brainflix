@@ -8,6 +8,12 @@
         display: flex;
         margin-left: 7.5%;
     }
+
+    &__container {
+        @include responsive.desktop {
+            width: 70%;
+        }
+    }
 }
 .Videos-container {
     background-color: colors.$BrainFlix-DarkBlack;
@@ -31,15 +37,7 @@
     }
 }
 
-.Next-Videos__container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    @include responsive.desktop {
-    }
-}
-.Next-Videos__section {
+.Next-Videos {
     padding: 0 1rem;
 
     @include responsive.tablet {
@@ -53,17 +51,22 @@
         border-left: 0.0625rem solid colors.$Mercury;
         padding-bottom: 2rem;
     }
-}
-.Next-Videos__heading {
-    @include responsive.desktop {
-        margin-top: 2rem;
-        color: colors.$Silver;
-        font-weight: 400;
-        font-size: 0.875rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        @include responsive.desktop {
+        }
     }
-}
-.Video-Form-Comment {
-    @include responsive.desktop {
-        width: 70%;
+
+    &__heading {
+        @include responsive.desktop {
+            margin-top: 2rem;
+            color: colors.$Silver;
+            font-weight: 400;
+            font-size: 0.875rem;
+        }
     }
 }

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import "./Video-Section.scss";
 import Form from "../Form/Form";
-import Comments from "../Comments/comments";
+import Comments from "../Comments/Comments";
 import NextVideos from "../Next-Videos/NextVideos";
 import Video from "../Video/Video";
 import axios from "axios";
@@ -57,12 +57,12 @@ function VideoSection() {
                 ></video>
             </div>
             <div className="Video-content">
-                <section className="Video-Form-Comment">
+                <section className="Video-content__container">
                     <Video video={video} />
                     <Form />
                     <Comments video={video} />
                 </section>
-                <section className="Next-Videos__section">
+                <section className="Next-Videos">
                     <h3 className="Next-Videos__heading">Next Videos</h3>
                     <div className="Next-Videos__container">
                         {filteredVideo.map((video) => (

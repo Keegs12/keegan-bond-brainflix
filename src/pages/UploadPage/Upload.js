@@ -1,11 +1,35 @@
 import React from "react";
 import thumbnail from "../../assets/images/Images/Upload-video-preview.jpg";
 import "./Upload.scss";
-function Upload(props) {
+import { useNavigate } from "react-router-dom";
+
+function Upload() {
+    let navigate = useNavigate();
+    const cancel = () => {
+        navigate("/");
+    };
+    const publish = (event) => {
+        event.preventDefault();
+        const title = event.target.title.value;
+        const description = event.target.description.value;
+        const titleInput = event.target.title;
+        const descriptionInput = event.target.description;
+        if (!title) {
+            alert("Invalid input entry");
+            titleInput.className = "Upload__input --error";
+        } else if (!description) {
+            alert("Invalid input entry");
+            descriptionInput.className = "Upload__text-area --error";
+        } else {
+            alert("You have successfully uploaded your video");
+            navigate("/");
+        }
+    };
+
     return (
         <section className="Upload">
             <h1 className="Upload__title">Upload Video</h1>
-            <form className="Upload__form">
+            <form onSubmit={publish} className="Upload__form">
                 <div className="Upload__title-image-container">
                     <h2 className="Upload__thumbnail-title">VIDEO THUMBNAIL</h2>
                     <img
@@ -20,7 +44,7 @@ function Upload(props) {
                             TITLE OF YOUR VIDEO
                         </label>
                         <input
-                            className="Upload__input"
+                            className={`${publish ? "Upload__input" : "error"}`}
                             type="text"
                             name="title"
                             id="title"
@@ -42,11 +66,13 @@ function Upload(props) {
                         ></textarea>
                     </div>
                 </div>
+                <div className="Upload__container">
+                    <button className="Upload__button">PUBLISH</button>
+                    <h2 onClick={() => cancel()} className="Upload__cancel">
+                        CANCEL
+                    </h2>
+                </div>
             </form>
-            <div className="Upload__container">
-                <button className="Upload__button">PUBLISH</button>
-                <h2 className="Upload__cancel">CANCEL</h2>
-            </div>
         </section>
     );
 }

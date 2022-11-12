@@ -1,11 +1,11 @@
 import React from "react";
 import "./NextVideos.scss";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NextVideos({ title, channel, image, id }) {
     return (
-        <NavLink className="Next-Videos__links" key={id} to={`/videos/${id}`}>
+        <Link className="Next-Videos__links" key={id} to={`/videos/${id}`}>
             <div className="Next-Videos__video-container">
                 <div>
                     <img
@@ -19,7 +19,7 @@ function NextVideos({ title, channel, image, id }) {
                     <h3 className="Next-Videos__channel">{channel}</h3>
                 </div>
             </div>
-        </NavLink>
+        </Link>
     );
 }
 
