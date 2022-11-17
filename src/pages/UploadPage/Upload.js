@@ -1,7 +1,9 @@
 import React from "react";
 import thumbnail from "../../assets/images/Images/Upload-video-preview.jpg";
 import "./Upload.scss";
+
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Upload() {
     let navigate = useNavigate();
@@ -24,7 +26,28 @@ function Upload() {
             alert("You have successfully uploaded your video");
             navigate("/");
         }
+
+        const newVideo = {
+            title: event.target.title.value,
+            description: event.target.description.value,
+            image: "http://localhost:8080/images/uploadVideo.jpg",
+        };
+
+        console.log(newVideo);
+
+        axios.post("http://localhost:8080/videos", newVideo);
     };
+
+    // const uploadVideo = (e) => {
+    //     // e.preventDefault();
+
+    //     const newVideo = {
+    //         name: e.target.title.value,
+    //         title: e.target.description.value,
+    //     };
+
+    //     console.log(newVideo);
+    // };
 
     return (
         <section className="Upload">
@@ -67,7 +90,13 @@ function Upload() {
                     </div>
                 </div>
                 <div className="Upload__container">
-                    <button className="Upload__button">PUBLISH</button>
+                    <button
+                        type="submit"
+                        className="Upload__button"
+                        // onClick={() => uploadVideo()}
+                    >
+                        PUBLISH
+                    </button>
                     <h2 onClick={() => cancel()} className="Upload__cancel">
                         CANCEL
                     </h2>

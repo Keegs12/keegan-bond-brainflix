@@ -10,18 +10,18 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function VideoSection() {
-    const apiKey = "560252be-011a-442a-8de1-456e0214c3b4";
+    // const apiKey = "560252be-011a-442a-8de1-456e0214c3b4";
+
+    // axios.get("http://localhost:8080/videos").then((response) => {
+    //     console.log(response.data);
+    // });
 
     const [video, setVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
     useEffect(() => {
-        axios
-            .get(
-                `https://project-2-api.herokuapp.com/videos/?api_key=${apiKey}`
-            )
-            .then((response) => {
-                setNextVideos(response.data);
-            });
+        axios.get("http://localhost:8080/videos").then((response) => {
+            setNextVideos(response.data);
+        });
     }, []);
 
     const { videoId } = useParams();
@@ -36,9 +36,7 @@ function VideoSection() {
     useEffect(() => {
         if (!selectedVideoId) return;
         axios
-            .get(
-                `https://project-2-api.herokuapp.com/videos/${selectedVideoId}/?api_key=${apiKey}`
-            )
+            .get(`http://localhost:8080/videos/${selectedVideoId}`)
             .then((response) => {
                 setVideo(response.data);
             });
