@@ -8,20 +8,20 @@ import NextVideos from "../Next-Videos/NextVideos";
 import Video from "../Video/Video";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+// ----------------------------------------------//
 
 function VideoSection() {
-    // const apiKey = "560252be-011a-442a-8de1-456e0214c3b4";
-
-    // axios.get("http://localhost:8080/videos").then((response) => {
-    //     console.log(response.data);
-    // });
-
     const [video, setVideo] = useState(null);
     const [nextVideos, setNextVideos] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:8080/videos").then((response) => {
-            setNextVideos(response.data);
-        });
+        axios
+            .get("http://localhost:8080/videos")
+            .then((response) => {
+                setNextVideos(response.data);
+            })
+            .catch((e) => {
+                console.log(e);
+            });
     }, []);
 
     const { videoId } = useParams();
@@ -39,6 +39,9 @@ function VideoSection() {
             .get(`http://localhost:8080/videos/${selectedVideoId}`)
             .then((response) => {
                 setVideo(response.data);
+            })
+            .catch((e) => {
+                console.log(e);
             });
     }, [selectedVideoId]);
     if (video === null) {

@@ -2,12 +2,14 @@ import React from "react";
 import "./Video.scss";
 import likesImage from "../../assets/images/Icons/likes.svg";
 import viewsImage from "../../assets/images/Icons/views.svg";
+// ----------------------------------------------//
+
 function Video({ video }) {
     return (
         <>
             <div className="videos"></div>
             <div className="videos-information">
-                <h2 className="videos-information__title">{video.title}</h2>
+                <h1 className="videos-information__title">{video.title}</h1>
                 <div className="videos-information__bio">
                     <div className="videos-information__bio-container">
                         <h4 className="videos-information__channel">

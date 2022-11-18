@@ -1,6 +1,8 @@
 import React from "react";
 import Avatar from "../../assets/images/Images/Mohan-muruge.jpg";
 import "./Form.scss";
+// ----------------------------------------------//
+
 function Form() {
     const formHandler = (event) => {
         event.preventDefault();

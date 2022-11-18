@@ -2,24 +2,28 @@ import React from "react";
 import BrainFlixLogo from "../../assets/images/Logo/BrainFlix-logo.svg";
 import Avatar from "../../assets/images/Images/Mohan-muruge.jpg";
 import "./Header.scss";
-import { useNavigate } from "react-router-dom";
-function Header() {
-    let navigate = useNavigate();
+import { Link } from "react-router-dom";
+/*   let navigate = useNavigate();
     const upload = () => {
         navigate("/upload");
     };
     const home = () => {
         navigate("/");
-    };
+    }; 
+Could use this method instead of Link to go to the home page or upload page */
+// ----------------------------------------------//
+
+function Header() {
     return (
         <header className="Header">
             {/* <div className="Header__container"> */}
-            <img
-                className="Header__logo"
-                src={BrainFlixLogo}
-                alt="BrainFlixLogo, Blue Youtube"
-                onClick={() => home()}
-            ></img>
+            <Link to="/">
+                <img
+                    className="Header__logo"
+                    src={BrainFlixLogo}
+                    alt="BrainFlixLogo, Blue Youtube"
+                ></img>
+            </Link>
 
             <label
                 className="Header__search-bar-input"
@@ -37,11 +41,9 @@ function Header() {
                 src={Avatar}
                 alt="BrainFlix Avatar Icon"
             ></img>
-
-            <button className="Header__button" onClick={() => upload()}>
-                UPLOAD
-            </button>
-            {/* </div> */}
+            <Link to="/upload">
+                <button className="Header__button">UPLOAD</button>
+            </Link>
         </header>
     );
 }

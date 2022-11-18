@@ -1,5 +1,6 @@
 import React from "react";
 import "./Comments.scss";
+// ----------------------------------------------//
 
 function Comments({ video }) {
     const { comments } = video;

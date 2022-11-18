@@ -1,9 +1,9 @@
 import React from "react";
 import thumbnail from "../../assets/images/Images/Upload-video-preview.jpg";
 import "./Upload.scss";
-
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+// ----------------------------------------------//
 
 function Upload() {
     let navigate = useNavigate();
@@ -30,12 +30,13 @@ function Upload() {
         const newVideo = {
             title: event.target.title.value,
             description: event.target.description.value,
-            image: "http://localhost:8080/images/uploadVideo.jpg",
         };
 
         console.log(newVideo);
 
-        axios.post("http://localhost:8080/videos", newVideo);
+        axios.post("http://localhost:8080/videos", newVideo).catch((e) => {
+            console.log(e);
+        });
     };
 
     // const uploadVideo = (e) => {

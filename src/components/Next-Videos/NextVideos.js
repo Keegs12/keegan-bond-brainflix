@@ -1,7 +1,7 @@
 import React from "react";
 import "./NextVideos.scss";
-
 import { Link } from "react-router-dom";
+// ----------------------------------------------//
 
 function NextVideos({ title, channel, image, id }) {
     return (
