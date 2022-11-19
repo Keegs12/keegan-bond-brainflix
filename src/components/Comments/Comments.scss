@@ -54,6 +54,10 @@
             @include sizing.subheader-td;
         }
     }
+    &__date-remove {
+        display: flex;
+        gap: 1rem;
+    }
     &__date {
         @include sizing.subheader;
         margin: 0 0 0.5rem 0;
@@ -67,6 +71,10 @@
         @include responsive.desktop {
             margin-right: 1.5rem;
         }
+    }
+    &__remove {
+        width: 25px;
+        height: 25px;
     }
     &__paragraph {
         @include sizing.body-copy;

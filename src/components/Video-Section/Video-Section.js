@@ -52,6 +52,10 @@ function VideoSection() {
         setVideo(comment);
     };
 
+    const removeComment = (comment) => {
+        setVideo(comment);
+    };
+
     return (
         <section>
             <div className="Videos-container">
@@ -68,7 +72,7 @@ function VideoSection() {
                         videoId={selectedVideoId}
                         addComment={addNewComment}
                     />
-                    <Comments video={video} />
+                    <Comments video={video} removeComment={removeComment} />
                 </section>
                 <section className="Next-Videos">
                     <h3 className="Next-Videos__heading">Next Videos</h3>
