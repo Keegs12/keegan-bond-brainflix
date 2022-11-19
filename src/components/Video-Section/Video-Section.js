@@ -48,6 +48,10 @@ function VideoSection() {
         return <main>loading</main>;
     }
 
+    const addNewComment = (comment) => {
+        setVideo(comment);
+    };
+
     return (
         <section>
             <div className="Videos-container">
@@ -60,7 +64,10 @@ function VideoSection() {
             <div className="Video-content">
                 <section className="Video-content__container">
                     <Video video={video} />
-                    <Form />
+                    <Form
+                        videoId={selectedVideoId}
+                        addComment={addNewComment}
+                    />
                     <Comments video={video} />
                 </section>
                 <section className="Next-Videos">

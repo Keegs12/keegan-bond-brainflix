@@ -1,12 +1,30 @@
+import axios from "axios";
 import React from "react";
 import Avatar from "../../assets/images/Images/Mohan-muruge.jpg";
 import "./Form.scss";
 // ----------------------------------------------//
 
-function Form() {
+function Form({ videoId, addComment }) {
     const formHandler = (event) => {
         event.preventDefault();
+        const comment = {
+            comment: event.target.comments.value,
+        };
+
+        axios
+            .post(`http://localhost:8080/videos/${videoId}/comments`, comment)
+            .then(() => {
+                axios
+                    .get(`http://localhost:8080/videos/${videoId}`)
+                    .then((response) => {
+                        addComment(response.data);
+                    });
+            })
+            .catch((e) => {
+                console.log("Error");
+            });
     };
+
     return (
         <section className="comments">
             <form onSubmit={formHandler} className="comments__form">

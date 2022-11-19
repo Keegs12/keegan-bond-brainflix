@@ -1,5 +1,5 @@
 import React from "react";
-import thumbnail from "../../assets/images/Images/Upload-video-preview.jpg";
+// import thumbnail from "../../assets/images/Images/Upload-video-preview.jpg";
 import "./Upload.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -58,7 +58,7 @@ function Upload() {
                     <h2 className="Upload__thumbnail-title">VIDEO THUMBNAIL</h2>
                     <img
                         className="Upload__thumbnail-image"
-                        src={thumbnail}
+                        src={"http://localhost:8080/images/uploadVideo.jpg"}
                         alt="bike"
                     ></img>
                 </div>
