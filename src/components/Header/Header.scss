@@ -29,8 +29,10 @@
         @include responsive.tablet {
             margin: 0;
         }
-        @include responsive.desktop {
-            margin-right: 26.5%;
+        &--margin-right {
+            @include responsive.desktop {
+                margin-right: 26.5%;
+            }
         }
     }
     &__container {

@@ -17,7 +17,7 @@ function Header() {
     return (
         <header className="Header">
             {/* <div className="Header__container"> */}
-            <Link to="/">
+            <Link className="Header__logo--margin-right" to="/">
                 <img
                     className="Header__logo"
                     src={BrainFlixLogo}

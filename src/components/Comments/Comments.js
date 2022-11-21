@@ -6,13 +6,9 @@ import axios from "axios";
 
 function Comments({ video, removeComment }) {
     const { comments } = video;
-    console.log(video);
-    console.log(comments);
 
     const deleteComment = (commentId) => {
         const videoId = video.id;
-        console.log(videoId);
-        console.log(commentId);
         axios
             .delete(
                 `http://localhost:8080/videos/${videoId}/comments/${commentId}`
@@ -25,7 +21,7 @@ function Comments({ video, removeComment }) {
                     });
             })
             .catch((e) => {
-                console.log("Error");
+                alert("Error");
             });
     };
     return comments.map((comment) => (

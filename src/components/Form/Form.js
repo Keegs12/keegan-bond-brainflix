@@ -21,7 +21,7 @@ function Form({ videoId, addComment }) {
                     });
             })
             .catch((e) => {
-                console.log("Error");
+                alert("Error");
             });
     };
 

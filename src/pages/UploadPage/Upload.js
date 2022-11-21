@@ -32,23 +32,10 @@ function Upload() {
             description: event.target.description.value,
         };
 
-        console.log(newVideo);
-
         axios.post("http://localhost:8080/videos", newVideo).catch((e) => {
-            console.log(e);
+            alert("Error");
         });
     };
-
-    // const uploadVideo = (e) => {
-    //     // e.preventDefault();
-
-    //     const newVideo = {
-    //         name: e.target.title.value,
-    //         title: e.target.description.value,
-    //     };
-
-    //     console.log(newVideo);
-    // };
 
     return (
         <section className="Upload">

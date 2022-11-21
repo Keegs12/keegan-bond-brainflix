@@ -20,7 +20,7 @@ function VideoSection() {
                 setNextVideos(response.data);
             })
             .catch((e) => {
-                console.log(e);
+                alert("Error");
             });
     }, []);
 
@@ -41,7 +41,7 @@ function VideoSection() {
                 setVideo(response.data);
             })
             .catch((e) => {
-                console.log(e);
+                alert("Error");
             });
     }, [selectedVideoId]);
     if (video === null) {
