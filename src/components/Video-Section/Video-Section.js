@@ -56,6 +56,10 @@ function VideoSection() {
         setVideo(comment);
     };
 
+    const likeVideo = (like) => {
+        setVideo(like);
+    };
+
     return (
         <section>
             <div className="Videos-container">
@@ -67,7 +71,7 @@ function VideoSection() {
             </div>
             <div className="Video-content">
                 <section className="Video-content__container">
-                    <Video video={video} />
+                    <Video video={video} likeVideo={likeVideo} />
                     <Form
                         videoId={selectedVideoId}
                         addComment={addNewComment}

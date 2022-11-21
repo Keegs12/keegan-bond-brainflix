@@ -2,9 +2,25 @@ import React from "react";
 import "./Video.scss";
 import likesImage from "../../assets/images/Icons/likes.svg";
 import viewsImage from "../../assets/images/Icons/views.svg";
+import axios from "axios";
 // ----------------------------------------------//
 
-function Video({ video }) {
+function Video({ video, likeVideo }) {
+    const videoId = video.id;
+    const videoLike = () => {
+        axios
+            .put(`http://localhost:8080/videos/${videoId}/likes`)
+            .then(() => {
+                axios
+                    .get(`http://localhost:8080/videos/${videoId}`)
+                    .then((response) => {
+                        likeVideo(response.data);
+                    });
+            })
+            .catch((e) => {
+                alert("Error");
+            });
+    };
     return (
         <>
             <div className="videos"></div>
@@ -32,6 +48,7 @@ function Video({ video }) {
                         </div>
                         <div className="videos-information__likes-container">
                             <img
+                                onClick={() => videoLike()}
                                 className="videos-information__likes-img"
                                 src={likesImage}
                                 alt="heart icon for a like"
